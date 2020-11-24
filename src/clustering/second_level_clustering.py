@@ -108,11 +108,12 @@ if __name__ == '__main__':
     grouped = data.groupby(data.FirstLevel)
     first_level_centers = first_level.cluster_centers_
     for key, group in grouped.__iter__():
-        if len(group) > 10:
+        if len(group) >= 50:
             res_bounds = find_bounds(first_level_centers[key], group.iloc[:, 0:-1])
             centers.append(first_level_centers[key])
             clusters_bounds.append(res_bounds)
         else:
+            print(len(group))
             count += 1
     np.save('../../models/secondlevel_clustering/centers.npy', np.array(centers))
     np.save('../../models/secondlevel_clustering/bounds.npy', np.array(clusters_bounds))

@@ -37,7 +37,7 @@ def pca_dimensionality_reduction(data):
     pca_result = pca.transform(data.values)
     df_pca = pd.DataFrame(pca_result)
     # print(df_pca)
-    return df_pca
+    return data
 
 def plot_tsne(training_set, test_set):
     # Perform preprocessing on frauds

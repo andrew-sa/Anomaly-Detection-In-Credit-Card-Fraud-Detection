@@ -26,6 +26,17 @@ if __name__ == '__main__':
 
     print('Total: {0}, Training: {1}, Test: {2}'.format(data.shape[0], genuine_training.shape[0], test_set.shape[0]))
 
+    # quantile = genuine_training.iloc[:, -2].quantile([.1, .2, .3, .4, .5, .6, .7, .8, .9])
+    # for index, value in quantile.items():
+    #     print(value)
+    # print(quantile.tolist())
+    # exit()
+
     # store raw training set and raw test set
-    genuine_training.to_pickle('../../pickle/raw_trainingset.pkl')
-    test_set.to_pickle('../../pickle/raw_testset.pkl')
+    # genuine_training.to_pickle('../../pickle/raw_trainingset.pkl')
+    # test_set.to_pickle('../../pickle/raw_testset.pkl')
+    # genuine_training.drop(columns=['Time', 'Amount']).to_pickle('../../pickle/raw_trainingset.pkl')
+    # test_set.drop(columns=['Time', 'Amount']).to_pickle('../../pickle/raw_testset.pkl')
+
+    genuine_training.drop(columns=['Time']).to_pickle('../../pickle/raw_trainingset.pkl')
+    test_set.drop(columns=['Time']).to_pickle('../../pickle/raw_testset.pkl')
