@@ -1,5 +1,5 @@
 # Exclude log directory
-!logs/
+!logs/*.log
 
 # Dataset
 dataset
