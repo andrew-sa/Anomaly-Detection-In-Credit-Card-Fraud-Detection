@@ -1,3 +1,6 @@
+# Exclude log directory
+!logs/
+
 # Dataset
 dataset
 
