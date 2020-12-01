@@ -7,5 +7,6 @@ setup(
     author='Andrea Mogavero',
     author_email='andreamogavero.sa@gmail.com',
     url='https://github.com/andrew-sa/Anomaly-Detection-In-Credit-Card-Fraud-Detection',
+    package_dir={'': 'src'},
     packages=find_packages(where='src')
 )

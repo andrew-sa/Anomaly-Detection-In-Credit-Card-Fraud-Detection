@@ -5,47 +5,48 @@ import matplotlib.pyplot as plt
 
 from joblib import dump, load
 from sklearn.manifold import TSNE
-from sklearn.decomposition import PCA
 from sklearn.preprocessing import MinMaxScaler
 
 def create_min_max_scaler(model_data):
+    '''
+    Create a min-max scaler
+
+    Parameters:
+        model_data (dataframe): data which model is fitted
+    '''
+
     scaler = MinMaxScaler().fit(model_data.values)
-    dump(scaler, '../../models/minmaxscaler.bin', compress=True)
+    dump(scaler, '../../models/preprocessing/minmaxscaler.bin', compress=True)
 
 def min_max_normalization(data):
-    scaler = load('../../models/minmaxscaler.bin')
+    '''
+    Normalize the data
+
+    Parameters:
+        data (dataframe): data to normalize
+    
+    Returns:
+        (dataframe): normalized data
+    '''
+
+    scaler = load('../../models/preprocessing/minmaxscaler.bin')
     scaled_data = scaler.transform(data.values)
     return pd.DataFrame(scaled_data)
 
-def plot_cumulative_explained_variance(data):
-    # plot cumulative explained variance
-    pca_plot = PCA().fit(data.values)
-    plt.plot(np.cumsum(pca_plot.explained_variance_ratio_))
-    threshold = plt.hlines(y=0.95, xmin=0, xmax=data.shape[1], linestyles='dashed',colors='red', label='Threshold=0.95')
-    plt.legend(handles=[threshold])
-    plt.xlabel('number of components')
-    plt.ylabel('cumulative explained variance')
-    plt.show()
-
-def create_pca_model(model_data):
-    pca = PCA(n_components=0.95, svd_solver='full').fit(model_data.values)
-    dump(pca, '../../models/pca.bin', compress=True)
-
-def pca_dimensionality_reduction(data):
-    # perform PCA
-    pca = load('../../models/pca.bin')
-    pca_result = pca.transform(data.values)
-    df_pca = pd.DataFrame(pca_result)
-    # print(df_pca)
-    return data
-
 def plot_tsne(training_set, test_set):
+    '''
+    Plot a 2D representation of 5000 genuine transactions and all frauds
+
+    Parameters:
+        training_set (dataframe): training set
+        test_set (dataframe): test set
+    '''
+
     # Perform preprocessing on frauds
     test_set = test_set[test_set['Class'] == 1]
     scaled_data = min_max_normalization(test_set.iloc[:, 0:-1])
-    pca_result = pca_dimensionality_reduction(scaled_data)
     target_class = test_set.iloc[:, -1].values
-    test_set = pd.DataFrame(pca_result)
+    test_set = scaled_data
     test_set['Class'] = target_class
 
     # select 5000 transaction from training set
@@ -83,9 +84,6 @@ if __name__ == '__main__':
     target_class_training_set = training_set.iloc[:, -1].values
     create_min_max_scaler(training_set.iloc[:, 0:-1]) # create the model based on the training set
     training_set = min_max_normalization(training_set.iloc[:, 0:-1])
-    create_pca_model(training_set) # create the model based on he training set
-    plot_cumulative_explained_variance(training_set) # plot cumulative explained variance for PCA
-    training_set = pca_dimensionality_reduction(training_set)
     
     # add target class to tranining set
     training_set['Class'] = target_class_training_set

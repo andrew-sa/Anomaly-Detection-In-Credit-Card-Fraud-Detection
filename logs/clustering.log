@@ -1,0 +1,4 @@
+INFO - 2020-11-30 17:25:19,451 - [elbow_method.py:32] - clusters = 500, wcss = 3351.15583
+INFO - 2020-11-30 17:33:21,449 - [elbow_method.py:32] - clusters = 1000, wcss = 2715.28016
+INFO - 2020-11-30 17:52:03,056 - [elbow_method.py:32] - clusters = 1500, wcss = 2385.47381
+INFO - 2020-11-30 17:58:38,345 - [elbow_method.py:32] - clusters = 2000, wcss = 2166.32960
