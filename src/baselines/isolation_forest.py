@@ -7,7 +7,7 @@ from sklearn.ensemble import IsolationForest
 from sklearn.metrics import confusion_matrix, roc_auc_score
 
 logger = logging.getLogger('baselines')
-hdlr = logging.FileHandler('../../../logs/baselines.log')
+hdlr = logging.FileHandler('../../logs/baselines.log')
 formatter = logging.Formatter('%(levelname)s - %(asctime)s - [%(filename)s:%(lineno)s] - %(message)s')
 hdlr.setFormatter(formatter)
 logger.addHandler(hdlr) 
