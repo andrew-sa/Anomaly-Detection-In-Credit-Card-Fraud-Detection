@@ -11,7 +11,6 @@ def _init_pool(dataset):
     '''
     Pool initializer
     '''
-    
     global data
     global logger
 
@@ -26,6 +25,15 @@ def _init_pool(dataset):
 
 
 def _calculate_wcss(n_cluster):
+    '''
+    Perform clustering and calculate the sum of squared distances of samples to their closest cluster center
+
+    Parameters:
+        n_cluster (int): number of clusters to create
+    
+    Returns:
+        wcss (float): sum of squared distances of samples to their closest cluster center
+    '''
     kmeans = KMeans(n_clusters=n_cluster, init='k-means++', n_init=5, max_iter=300, random_state=0, verbose=1)
     kmeans.fit(data)
     wcss = kmeans.inertia_
@@ -40,7 +48,6 @@ def perform_elbow_method(dataset):
     Parameters:
         dataset (ndarray): data to cluster
     '''
-
     first_n_cluster = clustering_config['elbow_method']['first']
     last_n_cluster = clustering_config['elbow_method']['last']
     step_size = clustering_config['elbow_method']['step_size']

@@ -15,7 +15,6 @@ def split_dataset(data):
         (dataframe): training set
         (dataframe): test set
     '''
-    
     test_ratio = splitting_config['test_ratio']
 
     # separe genuine transcations from frauds

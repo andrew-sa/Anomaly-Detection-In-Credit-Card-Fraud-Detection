@@ -3,9 +3,9 @@ import numpy as np
 import pandas as pd
 import seaborn as sn
 import multiprocessing as mp
-from matplotlib import colors
 import matplotlib.pyplot as plt
 
+from matplotlib import colors
 from joblib import dump, load
 from sklearn.neighbors import NearestNeighbors
 from sklearn.metrics import confusion_matrix, roc_auc_score
@@ -31,7 +31,6 @@ def _find_knn_centers(data_point):
     Returns:
         (list): the list contains the indeces of the k nearest centers
     '''
-
     global num_neighbors
     global centers
     if centers is None:
@@ -53,7 +52,6 @@ def get_prediction(row_tuple):
     Returns:
         prediction (int): the predicted value (0 = negative class, 1 = positive class)
     '''
-
     global bounds
     if bounds is None:
         bounds = load('../../models/clustering/bounds.bin')
@@ -78,7 +76,6 @@ def _init_pool(number_neighbors, cluster_centers=None, cluster_bounds=None):
     '''
     Pool initializer
     '''
-
     global num_neighbors
     global centers
     global bounds
@@ -86,9 +83,44 @@ def _init_pool(number_neighbors, cluster_centers=None, cluster_bounds=None):
     centers = cluster_centers
     bounds = cluster_bounds
 
-def get_tpr_and_tnr_to_evaluate_discarding(cluster_centers, cluster_bounds, number_neighbors):
+def get_metrics_to_evaluate_outliers(cluster_centers, cluster_bounds):
     '''
-    This method is used to evaluate discarding percentages by calculates_bounds.py module.
+    This method is used to evaluate outliers percentages by calculates_bounds.py module
+    The number of neighbors is 20
+
+    Parameters:
+        cluster_centers (ndarray): centers of each cluster
+        cluster_bounds (list): bounds of each cluster
+
+    Returns:
+        tpr (float): true positive rate
+        tnr (float): true negative rate
+        roc_auc (float): area under ROC curve
+    '''
+    number_neighbors = 20
+
+    # load raw test set
+    test_set = pd.read_pickle('../../pickle/raw_testset.pkl')
+    X_test = test_set.iloc[:, 0:-1]
+    y_true = test_set.iloc[:, -1].values
+    X_test = min_max_normalization(X_test)
+
+    # Multiporcesing using Pool
+    n_process = mp.cpu_count()
+    pool = mp.Pool(processes=n_process, initializer=_init_pool, initargs=[number_neighbors, cluster_centers, cluster_bounds,])
+    y_pred = pool.map(get_prediction, X_test.iterrows())
+    pool.close()
+    pool.join()
+
+    # return true positive rate (TPR), true negative rate (TNR) and area under ROC curve (ROC AUC)
+    tnr, fpr, fnr, tpr = confusion_matrix(y_true=y_true, y_pred=np.array(y_pred), normalize='true').ravel()
+    roc_auc = roc_auc_score(y_true, np.array(y_pred))
+    return tpr, tnr, roc_auc
+
+def get_metrics_to_evaluate_discarding(cluster_centers, cluster_bounds):
+    '''
+    This method is used to evaluate discarding percentages by calculates_bounds.py module
+    The number of neighbors is 20
 
     Parameters:
         cluster_centers (ndarray): centers of each cluster
@@ -98,6 +130,7 @@ def get_tpr_and_tnr_to_evaluate_discarding(cluster_centers, cluster_bounds, numb
         tpr (float): true positive rate
         tnr (float): true negative rate
     '''
+    number_neighbors = 20
 
     # load raw test set
     test_set = pd.read_pickle('../../pickle/raw_testset.pkl')
@@ -126,7 +159,6 @@ def _plot_tpr_tnr_auc(k_values, tpr_values, tnr_values, roc_auc_values):
         tnr_values (list): y2-values (true negative rates)
         roc_auc_values (list): y3-values (rou auc scores)
     '''
-
     plt.plot(k_values, tpr_values, color='blue', marker='o', label='TPR')
     plt.plot(k_values, tnr_values, color='red', marker='o', label='TNR')
     plt.plot(k_values, roc_auc_values, color='olive', marker='o', label='ROC AUC')
@@ -153,7 +185,6 @@ def _plot_confusion_matrix(conf_matrix, number_neighbors):
                         with true label being i-th class and prediced label being j-th class.)
         number_neighbors (int): value of k (k-NN) used to obtain this confusion matrix
     '''
-
     df_conf_matrix = pd.DataFrame(conf_matrix, ['Genuine', 'Fraud'], ['Genuine', 'Fraud'])
     sn.heatmap(df_conf_matrix, annot=True, fmt='d')
     plt.title('k = {0}'.format(number_neighbors))
@@ -199,7 +230,6 @@ def show_results(predictions):
     Parameters:
         predictions (list): list of list composed of number of neighbors and predicted labels (int, list)
     '''
-
     k_values = []
     tpr_values = []
     tnr_values = []
@@ -244,4 +274,3 @@ if __name__ == '__main__':
         pool.join()
 
     show_results(predictions)
-    

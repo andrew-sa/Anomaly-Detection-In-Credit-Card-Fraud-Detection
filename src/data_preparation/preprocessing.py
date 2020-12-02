@@ -14,7 +14,6 @@ def create_min_max_scaler(model_data):
     Parameters:
         model_data (dataframe): data which model is fitted
     '''
-
     scaler = MinMaxScaler().fit(model_data.values)
     dump(scaler, '../../models/preprocessing/minmaxscaler.bin', compress=True)
 
@@ -28,7 +27,6 @@ def min_max_normalization(data):
     Returns:
         (dataframe): normalized data
     '''
-
     scaler = load('../../models/preprocessing/minmaxscaler.bin')
     scaled_data = scaler.transform(data.values)
     return pd.DataFrame(scaled_data)
@@ -41,7 +39,6 @@ def plot_tsne(training_set, test_set):
         training_set (dataframe): training set
         test_set (dataframe): test set
     '''
-
     # Perform preprocessing on frauds
     test_set = test_set[test_set['Class'] == 1]
     scaled_data = min_max_normalization(test_set.iloc[:, 0:-1])

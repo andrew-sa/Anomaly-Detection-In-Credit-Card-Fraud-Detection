@@ -1,30 +1,30 @@
-INFO - 2020-12-01 10:07:34,588 - [predictor.py:210] - k of k-NN = 20.
-INFO - 2020-12-01 10:07:34,588 - [predictor.py:211] - TN: 56337, FP: 526, FN: 84, TP: 408
-INFO - 2020-12-01 10:07:34,588 - [predictor.py:212] - TNR: 0.99075, TPR: 0.82927
-INFO - 2020-12-01 10:07:34,598 - [predictor.py:214] - ROC AUC: 0.91001
+INFO - 2020-12-02 17:10:13,842 - [predictor.py:240] - k of k-NN = 20.
+INFO - 2020-12-02 17:10:13,842 - [predictor.py:241] - TN: 54898, FP: 1965, FN: 61, TP: 431
+INFO - 2020-12-02 17:10:13,843 - [predictor.py:242] - TNR: 0.96544, TPR: 0.87602
+INFO - 2020-12-02 17:10:13,855 - [predictor.py:244] - ROC AUC: 0.92073
 
-INFO - 2020-12-01 10:07:34,689 - [predictor.py:210] - k of k-NN = 15.
-INFO - 2020-12-01 10:07:34,689 - [predictor.py:211] - TN: 56323, FP: 540, FN: 84, TP: 408
-INFO - 2020-12-01 10:07:34,689 - [predictor.py:212] - TNR: 0.99050, TPR: 0.82927
-INFO - 2020-12-01 10:07:34,699 - [predictor.py:214] - ROC AUC: 0.90989
+INFO - 2020-12-02 17:10:13,942 - [predictor.py:240] - k of k-NN = 15.
+INFO - 2020-12-02 17:10:13,942 - [predictor.py:241] - TN: 54878, FP: 1985, FN: 61, TP: 431
+INFO - 2020-12-02 17:10:13,943 - [predictor.py:242] - TNR: 0.96509, TPR: 0.87602
+INFO - 2020-12-02 17:10:13,956 - [predictor.py:244] - ROC AUC: 0.92055
 
-INFO - 2020-12-01 10:07:34,790 - [predictor.py:210] - k of k-NN = 10.
-INFO - 2020-12-01 10:07:34,790 - [predictor.py:211] - TN: 56297, FP: 566, FN: 84, TP: 408
-INFO - 2020-12-01 10:07:34,790 - [predictor.py:212] - TNR: 0.99005, TPR: 0.82927
-INFO - 2020-12-01 10:07:34,800 - [predictor.py:214] - ROC AUC: 0.90966
+INFO - 2020-12-02 17:10:14,044 - [predictor.py:240] - k of k-NN = 10.
+INFO - 2020-12-02 17:10:14,045 - [predictor.py:241] - TN: 54845, FP: 2018, FN: 61, TP: 431
+INFO - 2020-12-02 17:10:14,045 - [predictor.py:242] - TNR: 0.96451, TPR: 0.87602
+INFO - 2020-12-02 17:10:14,057 - [predictor.py:244] - ROC AUC: 0.92026
 
-INFO - 2020-12-01 10:07:34,892 - [predictor.py:210] - k of k-NN = 5.
-INFO - 2020-12-01 10:07:34,892 - [predictor.py:211] - TN: 56244, FP: 619, FN: 84, TP: 408
-INFO - 2020-12-01 10:07:34,892 - [predictor.py:212] - TNR: 0.98911, TPR: 0.82927
-INFO - 2020-12-01 10:07:34,902 - [predictor.py:214] - ROC AUC: 0.90919
+INFO - 2020-12-02 17:10:14,147 - [predictor.py:240] - k of k-NN = 5.
+INFO - 2020-12-02 17:10:14,147 - [predictor.py:241] - TN: 54751, FP: 2112, FN: 60, TP: 432
+INFO - 2020-12-02 17:10:14,147 - [predictor.py:242] - TNR: 0.96286, TPR: 0.87805
+INFO - 2020-12-02 17:10:14,161 - [predictor.py:244] - ROC AUC: 0.92045
 
-INFO - 2020-12-01 10:07:34,991 - [predictor.py:210] - k of k-NN = 3.
-INFO - 2020-12-01 10:07:34,991 - [predictor.py:211] - TN: 56170, FP: 693, FN: 79, TP: 413
-INFO - 2020-12-01 10:07:34,991 - [predictor.py:212] - TNR: 0.98781, TPR: 0.83943
-INFO - 2020-12-01 10:07:35,001 - [predictor.py:214] - ROC AUC: 0.91362
+INFO - 2020-12-02 17:10:14,250 - [predictor.py:240] - k of k-NN = 3.
+INFO - 2020-12-02 17:10:14,250 - [predictor.py:241] - TN: 54618, FP: 2245, FN: 60, TP: 432
+INFO - 2020-12-02 17:10:14,250 - [predictor.py:242] - TNR: 0.96052, TPR: 0.87805
+INFO - 2020-12-02 17:10:14,262 - [predictor.py:244] - ROC AUC: 0.91928
 
-INFO - 2020-12-01 10:07:35,073 - [predictor.py:210] - k of k-NN = 1.
-INFO - 2020-12-01 10:07:35,073 - [predictor.py:211] - TN: 55632, FP: 1231, FN: 73, TP: 419
-INFO - 2020-12-01 10:07:35,073 - [predictor.py:212] - TNR: 0.97835, TPR: 0.85163
-INFO - 2020-12-01 10:07:35,084 - [predictor.py:214] - ROC AUC: 0.91499
+INFO - 2020-12-02 17:10:14,347 - [predictor.py:240] - k of k-NN = 1.
+INFO - 2020-12-02 17:10:14,347 - [predictor.py:241] - TN: 53691, FP: 3172, FN: 57, TP: 435
+INFO - 2020-12-02 17:10:14,347 - [predictor.py:242] - TNR: 0.94422, TPR: 0.88415
+INFO - 2020-12-02 17:10:14,361 - [predictor.py:244] - ROC AUC: 0.91418
 

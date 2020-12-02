@@ -13,7 +13,6 @@ def run_kmeans(data, num_clusters):
         data (dataframe): data to cluster
         num_clusters (int): number of clusters
     '''
-
     kmeans = KMeans(n_clusters=num_clusters, init='k-means++', n_init=10, max_iter=300, random_state=0, verbose=1)
     kmeans.fit(data)
     wcss = kmeans.inertia_

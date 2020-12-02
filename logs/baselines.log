@@ -1,0 +1,10 @@
+INFO - 2020-12-02 11:30:00,638 - [isolation_forest.py:87] - ISOLATION FOREST
+INFO - 2020-12-02 11:30:00,638 - [isolation_forest.py:88] - TN: 54903, FP: 1960, FN: 82, TP: 410
+INFO - 2020-12-02 11:30:00,638 - [isolation_forest.py:89] - TNR: 0.96553, TPR: 0.83333
+INFO - 2020-12-02 11:30:00,638 - [isolation_forest.py:90] - ROC AUC: 0.89943
+
+INFO - 2020-12-02 12:53:13,932 - [one_class_svm.py:83] - ONE-CLASS SUPPORT VECTOR MACHINE
+INFO - 2020-12-02 12:53:13,932 - [one_class_svm.py:84] - TN: 51170, FP: 5693, FN: 56, TP: 436
+INFO - 2020-12-02 12:53:13,932 - [one_class_svm.py:85] - TNR: 0.89988, TPR: 0.88618
+INFO - 2020-12-02 12:53:13,940 - [one_class_svm.py:86] - ROC AUC: 0.89303
+
