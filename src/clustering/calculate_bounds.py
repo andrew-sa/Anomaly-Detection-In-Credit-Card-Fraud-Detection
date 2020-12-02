@@ -176,7 +176,7 @@ def delete_small_clustars_and_calculate_bounds_without_outliers(data, clustering
             discarded_transactions_count += len(group)
 
     logger.info('Delete {0}% of training set with: threshold = {1}, discarded transactions = {2}, discarded clusters = {3}'.format(percentage_to_discard, threshold, discarded_transactions_count, discarded_clusters_count))
-    logger.info('Discarded {0} outliers, equals to {1:.2f}% of training set'.format(total_outliers, (total_outliers / len(data))))
+    logger.info('Discarded {0} outliers, equals to {1:.2f}% of training set'.format(total_outliers, ((total_outliers * 100) / len(data))))
     return np.array(result_centers), result_clusters_bounds
 
 def delete_small_clustars_and_calculate_bounds(data, clustering, percentage_to_discard):
