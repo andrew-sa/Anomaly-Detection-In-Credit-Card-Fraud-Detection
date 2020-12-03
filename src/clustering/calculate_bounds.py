@@ -337,7 +337,6 @@ def evaluate_outliers(data, clustering, percentage_to_discard):
     return model_with_outliers, model_without_outliers
 
 if __name__ == '__main__':
-    total_outliers = 0
     # load data
     data = pd.read_pickle('../../pickle/trainingset.pkl')
     # load first level clustering
