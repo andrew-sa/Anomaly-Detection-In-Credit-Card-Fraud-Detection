@@ -318,20 +318,18 @@ def evaluate_outliers(data, clustering, percentage_to_discard):
         model_with_outliers (list): centers and bounds calculate with outliers
         model_without_outliers (list): center and bounds calculate without outliers
     '''
-    labels = ['TPR', 'TNR', 'ROC AUC']
+    labels = ['TPR', 'TNR']
     with_outliers = []
     without_outliers = []
 
     model_with_outliers = delete_small_clustars_and_calculate_bounds(data, clustering, percentage_to_discard)
     model_without_outliers = delete_small_clustars_and_calculate_bounds_without_outliers(data, clustering, percentage_to_discard)
-    tpr, tnr, roc_auc = get_metrics_to_evaluate_outliers(model_with_outliers[0], model_with_outliers[1])
+    tpr, tnr = get_metrics_to_evaluate_outliers(model_with_outliers[0], model_with_outliers[1])
     with_outliers.append(tpr)
     with_outliers.append(tnr)
-    with_outliers.append(roc_auc)
-    tpr, tnr, roc_auc = get_metrics_to_evaluate_outliers(model_without_outliers[0], model_without_outliers[1])
+    tpr, tnr = get_metrics_to_evaluate_outliers(model_without_outliers[0], model_without_outliers[1])
     without_outliers.append(tpr)
     without_outliers.append(tnr)
-    without_outliers.append(roc_auc)
     _plot_evaluate_outliers(labels, with_outliers, without_outliers)
 
     return model_with_outliers, model_without_outliers

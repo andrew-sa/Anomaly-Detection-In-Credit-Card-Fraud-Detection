@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 from matplotlib import colors
 from joblib import dump, load
 from sklearn.neighbors import NearestNeighbors
-from sklearn.metrics import confusion_matrix, roc_auc_score
+from sklearn.metrics import confusion_matrix
 from data_preparation.preprocessing import min_max_normalization
 from models_config import predictor_config
 
@@ -95,7 +95,6 @@ def get_metrics_to_evaluate_outliers(cluster_centers, cluster_bounds):
     Returns:
         tpr (float): true positive rate
         tnr (float): true negative rate
-        roc_auc (float): area under ROC curve
     '''
     number_neighbors = 20
 
@@ -112,10 +111,9 @@ def get_metrics_to_evaluate_outliers(cluster_centers, cluster_bounds):
     pool.close()
     pool.join()
 
-    # return true positive rate (TPR), true negative rate (TNR) and area under ROC curve (ROC AUC)
+    # return true positive rate (TPR) and true negative rate (TNR)
     tnr, fpr, fnr, tpr = confusion_matrix(y_true=y_true, y_pred=np.array(y_pred), normalize='true').ravel()
-    roc_auc = roc_auc_score(y_true, np.array(y_pred))
-    return tpr, tnr, roc_auc
+    return tpr, tnr
 
 def get_metrics_to_evaluate_discarding(cluster_centers, cluster_bounds):
     '''
@@ -149,26 +147,22 @@ def get_metrics_to_evaluate_discarding(cluster_centers, cluster_bounds):
     tnr, fpr, fnr, tpr = confusion_matrix(y_true=y_true, y_pred=np.array(y_pred), normalize='true').ravel()
     return tpr, tnr
 
-def _plot_tpr_tnr_auc(k_values, tpr_values, tnr_values, roc_auc_values):
+def _plot_tpr_tnr(k_values, tpr_values, tnr_values):
     '''
-    Plot true positive rates, true negative rates and area under the ROC curve
+    Plot true positive rates and true negative rates
 
     Parameters:
         k_values (list): x-values (k values for k-NN)
         tpr_values (list): y1-values (true positive rates)
         tnr_values (list): y2-values (true negative rates)
-        roc_auc_values (list): y3-values (rou auc scores)
     '''
     plt.plot(k_values, tpr_values, color='blue', marker='o', label='TPR')
     plt.plot(k_values, tnr_values, color='red', marker='o', label='TNR')
-    plt.plot(k_values, roc_auc_values, color='olive', marker='o', label='ROC AUC')
-    for x, y1, y2, y3 in zip(k_values, tpr_values, tnr_values, roc_auc_values):
+    for x, y1, y2 in zip(k_values, tpr_values, tnr_values):
         label_y1 = '{:.3f}'.format(y1)
         plt.annotate(label_y1, (x, y1), textcoords='offset points', xytext=(0, -15), ha='center')
         label_y2 = '{:.3f}'.format(y2)
         plt.annotate(label_y2, (x, y2), textcoords='offset points', xytext=(0, -15), ha='center')
-        label_y3 = '{:.3f}'.format(y3)
-        plt.annotate(label_y3, (x, y3), textcoords='offset points', xytext=(0, -15), ha='center')
     plt.xticks(k_values)
     plt.yticks(np.arange(0, 1.1, 0.1))
     plt.xlabel('Number of neighbors (k-NN)')
@@ -233,20 +227,16 @@ def show_results(predictions):
     k_values = []
     tpr_values = []
     tnr_values = []
-    roc_auc_values = []
     for number_neighbors, y_pred in predictions:
         tn, fp, fn, tp = confusion_matrix(y_true=y_true, y_pred=np.array(y_pred), normalize=None).ravel()
         tnr, fpr, fnr, tpr = confusion_matrix(y_true=y_true, y_pred=np.array(y_pred), normalize='true').ravel()
         logger.info('k of k-NN = {0}.'.format(number_neighbors))
         logger.info('TN: {0}, FP: {1}, FN: {2}, TP: {3}'.format(tn, fp, fn, tp))
         logger.info('TNR: {:.5f}, TPR: {:.5f}'.format(tnr, tpr))
-        roc_auc = roc_auc_score(y_true, np.array(y_pred))
-        logger.info('ROC AUC: {:.5f}\n'.format(roc_auc))
         k_values.append(number_neighbors)
         tpr_values.append(tpr)
         tnr_values.append(tnr)
-        roc_auc_values.append(roc_auc)   
-    _plot_tpr_tnr_auc(k_values, tpr_values, tnr_values, roc_auc_values)
+    _plot_tpr_tnr(k_values, tpr_values, tnr_values)
     _plot_confusion_matrices(predictions)
     # for number_neighbors, y_pred in predictions:
     #     conf_matrix = confusion_matrix(y_true=y_true, y_pred=np.array(y_pred), normalize=None)
