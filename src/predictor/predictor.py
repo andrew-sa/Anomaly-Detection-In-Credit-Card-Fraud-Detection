@@ -232,7 +232,7 @@ def show_results(predictions):
         tnr, fpr, fnr, tpr = confusion_matrix(y_true=y_true, y_pred=np.array(y_pred), normalize='true').ravel()
         logger.info('k of k-NN = {0}.'.format(number_neighbors))
         logger.info('TN: {0}, FP: {1}, FN: {2}, TP: {3}'.format(tn, fp, fn, tp))
-        logger.info('TNR: {:.5f}, TPR: {:.5f}'.format(tnr, tpr))
+        logger.info('TNR: {:.5f}, TPR: {:.5f}\n'.format(tnr, tpr))
         k_values.append(number_neighbors)
         tpr_values.append(tpr)
         tnr_values.append(tnr)
