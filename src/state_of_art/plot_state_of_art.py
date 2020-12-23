@@ -55,6 +55,6 @@ if __name__ == '__main__':
     my_predictor = [0.89865, 0.95101]
     logistic_regression = [0.91216,  0.97316]
     random_forest = [0.91892, 0.91903]
-    deep_nn = [0.91892, 0.92000]
+    deep_nn = [0.92568, 0.96222]
 
     plot(labels, my_predictor, logistic_regression, random_forest, deep_nn)
