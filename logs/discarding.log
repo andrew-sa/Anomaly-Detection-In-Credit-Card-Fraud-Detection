@@ -1,17 +1,38 @@
-INFO - 2020-12-02 16:11:55,718 - [calculate_bounds.py:363] - Number of clusters: 1000
-INFO - 2020-12-02 16:12:04,249 - [calculate_bounds.py:236] - Delete 0% of training set with: threshold = 1, discarded transactions = 0, discarded clusters = 0
-INFO - 2020-12-02 16:14:01,195 - [calculate_bounds.py:282] - Discarding percentage: 0%, TPR: 0.46748, TNR: 0.99954
-INFO - 2020-12-02 16:14:23,477 - [calculate_bounds.py:236] - Delete 2% of training set with: threshold = 85, discarded transactions = 4451, discarded clusters = 96
-INFO - 2020-12-02 16:15:56,122 - [calculate_bounds.py:282] - Discarding percentage: 2%, TPR: 0.82317, TNR: 0.99450
-INFO - 2020-12-02 16:16:21,615 - [calculate_bounds.py:236] - Delete 4% of training set with: threshold = 114, discarded transactions = 8914, discarded clusters = 141
-INFO - 2020-12-02 16:17:54,912 - [calculate_bounds.py:282] - Discarding percentage: 4%, TPR: 0.82724, TNR: 0.99284
-INFO - 2020-12-02 16:18:22,167 - [calculate_bounds.py:236] - Delete 6% of training set with: threshold = 129, discarded transactions = 13571, discarded clusters = 180
-INFO - 2020-12-02 16:19:39,961 - [calculate_bounds.py:282] - Discarding percentage: 6%, TPR: 0.82927, TNR: 0.99075
-INFO - 2020-12-02 16:20:08,436 - [calculate_bounds.py:236] - Delete 8% of training set with: threshold = 141, discarded transactions = 17726, discarded clusters = 211
-INFO - 2020-12-02 16:21:35,584 - [calculate_bounds.py:282] - Discarding percentage: 8%, TPR: 0.82927, TNR: 0.99040
-INFO - 2020-12-02 16:22:08,718 - [calculate_bounds.py:236] - Delete 10% of training set with: threshold = 148, discarded transactions = 22616, discarded clusters = 245
-INFO - 2020-12-02 16:23:33,109 - [calculate_bounds.py:282] - Discarding percentage: 10%, TPR: 0.82927, TNR: 0.99010
-INFO - 2020-12-02 16:24:51,076 - [calculate_bounds.py:236] - Delete 6% of training set with: threshold = 129, discarded transactions = 13571, discarded clusters = 180
-INFO - 2020-12-02 16:25:25,587 - [calculate_bounds.py:196] - Delete 6% of training set with: threshold = 129, discarded transactions = 13571, discarded clusters = 180
-INFO - 2020-12-02 16:25:25,587 - [calculate_bounds.py:197] - Discarded 4175 outliers, equals to 1.84% of training set
-INFO - 2020-12-02 16:29:56,898 - [calculate_bounds.py:377] - Model WITHOUT outliers has been saved
+INFO - 2020-12-21 13:03:38,251 - [calculate_bounds.py:303] - Number of clusters: 1000
+
+INFO - 2020-12-21 13:03:45,614 - [calculate_bounds.py:218] - Delete 0% of training set with: threshold = 1, discarded transactions = 0, discarded clusters = 0
+INFO - 2020-12-21 13:04:15,656 - [calculate_bounds.py:265] - Discarding percentage: 0%, TPR: 0.45058, TNR: 0.99903
+INFO - 2020-12-21 13:04:34,045 - [calculate_bounds.py:218] - Delete 2% of training set with: threshold = 85, discarded transactions = 4273, discarded clusters = 98
+INFO - 2020-12-21 13:04:59,501 - [calculate_bounds.py:265] - Discarding percentage: 2%, TPR: 0.80233, TNR: 0.99499
+INFO - 2020-12-21 13:05:21,075 - [calculate_bounds.py:218] - Delete 4% of training set with: threshold = 107, discarded transactions = 8182, discarded clusters = 139
+INFO - 2020-12-21 13:05:45,505 - [calculate_bounds.py:265] - Discarding percentage: 4%, TPR: 0.81977, TNR: 0.99314
+INFO - 2020-12-21 13:06:08,862 - [calculate_bounds.py:218] - Delete 6% of training set with: threshold = 122, discarded transactions = 12629, discarded clusters = 178
+INFO - 2020-12-21 13:06:32,847 - [calculate_bounds.py:265] - Discarding percentage: 6%, TPR: 0.82267, TNR: 0.99050
+INFO - 2020-12-21 13:06:57,245 - [calculate_bounds.py:218] - Delete 8% of training set with: threshold = 131, discarded transactions = 16783, discarded clusters = 211
+INFO - 2020-12-21 13:07:21,509 - [calculate_bounds.py:265] - Discarding percentage: 8%, TPR: 0.82267, TNR: 0.98681
+INFO - 2020-12-21 13:07:47,504 - [calculate_bounds.py:218] - Delete 10% of training set with: threshold = 141, discarded transactions = 21381, discarded clusters = 245
+INFO - 2020-12-21 13:08:10,814 - [calculate_bounds.py:267] - Discarding percentage: 10%, TPR: 0.82267, TNR: 0.98611
+
+INFO - 2020-12-21 13:17:57,816 - [calculate_bounds.py:178] - Delete 0% of training set with: threshold = 1, discarded transactions = 0, discarded clusters = 0
+INFO - 2020-12-21 13:17:57,816 - [calculate_bounds.py:179] - Discarded 4509 outliers, equals to 2.09% of training set
+INFO - 2020-12-21 13:18:24,762 - [calculate_bounds.py:292] - [WITHOUT outliers] Discarding percentage: 0%, TPR: 0.49128, TNR: 0.99050
+INFO - 2020-12-21 13:18:50,452 - [calculate_bounds.py:178] - Delete 2% of training set with: threshold = 85, discarded transactions = 4273, discarded clusters = 98
+INFO - 2020-12-21 13:18:50,452 - [calculate_bounds.py:179] - Discarded 4406 outliers, equals to 2.04% of training set
+INFO - 2020-12-21 13:19:15,688 - [calculate_bounds.py:292] - [WITHOUT outliers] Discarding percentage: 2%, TPR: 0.83140, TNR: 0.98004
+INFO - 2020-12-21 13:19:44,926 - [calculate_bounds.py:178] - Delete 4% of training set with: threshold = 107, discarded transactions = 8182, discarded clusters = 139
+INFO - 2020-12-21 13:19:44,926 - [calculate_bounds.py:179] - Discarded 4321 outliers, equals to 2.00% of training set
+INFO - 2020-12-21 13:20:10,932 - [calculate_bounds.py:292] - [WITHOUT outliers] Discarding percentage: 4%, TPR: 0.83721, TNR: 0.97186
+INFO - 2020-12-21 13:20:40,235 - [calculate_bounds.py:178] - Delete 6% of training set with: threshold = 122, discarded transactions = 12629, discarded clusters = 178
+INFO - 2020-12-21 13:20:40,235 - [calculate_bounds.py:179] - Discarded 4233 outliers, equals to 1.96% of training set
+INFO - 2020-12-21 13:21:04,559 - [calculate_bounds.py:292] - [WITHOUT outliers] Discarding percentage: 6%, TPR: 0.85174, TNR: 0.96325
+INFO - 2020-12-21 13:21:34,849 - [calculate_bounds.py:178] - Delete 8% of training set with: threshold = 131, discarded transactions = 16783, discarded clusters = 211
+INFO - 2020-12-21 13:21:34,849 - [calculate_bounds.py:179] - Discarded 4123 outliers, equals to 1.91% of training set
+INFO - 2020-12-21 13:21:58,826 - [calculate_bounds.py:292] - [WITHOUT outliers] Discarding percentage: 8%, TPR: 0.85756, TNR: 0.95349
+INFO - 2020-12-21 13:22:30,290 - [calculate_bounds.py:178] - Delete 10% of training set with: threshold = 141, discarded transactions = 21381, discarded clusters = 245
+INFO - 2020-12-21 13:22:30,290 - [calculate_bounds.py:179] - Discarded 4024 outliers, equals to 1.86% of training set
+INFO - 2020-12-21 13:22:53,983 - [calculate_bounds.py:294] - [WITHOUT outliers] Discarding percentage: 10%, TPR: 0.86047, TNR: 0.94716
+
+INFO - 2020-12-21 13:38:59,185 - [calculate_bounds.py:178] - Delete 10% of training set with: threshold = 141, discarded transactions = 21381, discarded clusters = 245
+INFO - 2020-12-21 13:38:59,185 - [calculate_bounds.py:179] - Discarded 4024 outliers, equals to 1.86% of training set
+INFO - 2020-12-21 13:38:59,277 - [calculate_bounds.py:319] - Model WITHOUT outliers has been saved
+

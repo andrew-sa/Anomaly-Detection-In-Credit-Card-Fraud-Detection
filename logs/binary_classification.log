@@ -1,0 +1,12 @@
+INFO - 2020-12-22 16:59:04,622 - [logistic_regression.py:99] - LOGISTIC REGRESSION
+INFO - 2020-12-22 16:59:04,622 - [logistic_regression.py:100] - TN: 55337, FP: 1526, FN: 13, TP: 135
+INFO - 2020-12-22 16:59:04,622 - [logistic_regression.py:101] - TNR: 0.97316, TPR: 0.91216
+
+INFO - 2020-12-23 18:27:14,613 - [random_forest.py:94] - RANDOM FOREST
+INFO - 2020-12-23 18:27:14,613 - [random_forest.py:95] - TN: 52259, FP: 4604, FN: 12, TP: 136
+INFO - 2020-12-23 18:27:14,613 - [random_forest.py:96] - TNR: 0.91903, TPR: 0.91892
+
+INFO - 2020-12-23 19:57:48,671 - [deep_neural_network.py:74] - DEEP NEURAL NETWORK
+INFO - 2020-12-23 19:57:48,672 - [deep_neural_network.py:75] - TN: 54715, FP: 2148, FN: 11, TP: 137
+INFO - 2020-12-23 19:57:48,672 - [deep_neural_network.py:76] - TNR: 0.96222, TPR: 0.92568
+

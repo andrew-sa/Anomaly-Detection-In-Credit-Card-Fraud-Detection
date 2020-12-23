@@ -1,14 +1,12 @@
-INFO - 2020-12-04 17:04:45,642 - [isolation_forest.py:91] - ISOLATION FOREST
-INFO - 2020-12-04 17:04:45,642 - [isolation_forest.py:92] - TN: 53800, FP: 3063, FN: 69, TP: 423
-INFO - 2020-12-04 17:04:45,642 - [isolation_forest.py:93] - TNR: 0.94613, TPR: 0.85976
-INFO - 2020-12-04 17:04:45,642 - [isolation_forest.py:94] - ROC AUC: 0.95632
+INFO - 2020-12-21 18:57:51,256 - [isolation_forest.py:103] - ISOLATION FOREST
+INFO - 2020-12-21 18:57:51,256 - [isolation_forest.py:104] - TN: 53333, FP: 3530, FN: 20, TP: 128
+INFO - 2020-12-21 18:57:51,256 - [isolation_forest.py:105] - TNR: 0.93792, TPR: 0.86486
 
-INFO - 2020-12-04 17:07:29,796 - [one_class_svm.py:88] - ONE-CLASS SUPPORT VECTOR MACHINE
-INFO - 2020-12-04 17:07:29,797 - [one_class_svm.py:89] - TN: 51170, FP: 5693, FN: 56, TP: 436
-INFO - 2020-12-04 17:07:29,797 - [one_class_svm.py:90] - TNR: 0.89988, TPR: 0.88618
-INFO - 2020-12-04 17:07:29,797 - [one_class_svm.py:91] - ROC AUC: 0.94486
+INFO - 2020-12-21 19:02:16,931 - [one_class_svm.py:100] - ONE-CLASS SUPPORT VECTOR MACHINE
+INFO - 2020-12-21 19:02:16,931 - [one_class_svm.py:101] - TN: 51175, FP: 5688, FN: 16, TP: 132
+INFO - 2020-12-21 19:02:16,931 - [one_class_svm.py:102] - TNR: 0.89997, TPR: 0.89189
 
-INFO - 2020-12-05 15:14:15,016 - [autoencoder.py:211] - AUTOENCODER
-INFO - 2020-12-05 15:14:15,016 - [autoencoder.py:212] - TN: 52399, FP: 4464, FN: 47, TP: 445
-INFO - 2020-12-05 15:14:15,017 - [autoencoder.py:213] - TNR: 0.92150, TPR: 0.90447
+INFO - 2020-12-21 21:06:32,302 - [autoencoder.py:271] - AUTOENCODER
+INFO - 2020-12-21 21:06:32,303 - [autoencoder.py:272] - TN: 52314, FP: 4549, FN: 12, TP: 136
+INFO - 2020-12-21 21:06:32,303 - [autoencoder.py:273] - TNR: 0.92000, TPR: 0.91892
 

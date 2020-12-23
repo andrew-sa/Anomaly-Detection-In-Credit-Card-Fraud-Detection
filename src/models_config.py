@@ -1,5 +1,7 @@
 splitting_config = {
-    'test_ratio': 0.2
+    'genuine_test_ratio': 0.2,
+    'frauds_test_ratio': 0.3,
+    'genuine_validate_ratio': 0.05
 }
 
 clustering_config = {

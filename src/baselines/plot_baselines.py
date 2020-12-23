@@ -2,13 +2,13 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-def plot_baselines(labels, predictor, isolation_forest, oc_svm, autoencoder):
+def plot_baselines(labels, my_predictor, isolation_forest, oc_svm, autoencoder):
     '''
     Plot predictor's metrics in a bar chart
 
     Parameters:
         labels (list): name of metrics
-        predictor (list): scores of novel predictor
+        my_predictor (list): scores of novel predictor
         isolation_forest (list): scores of isolation forest
         oc_svm (list): scores of one-class support vector machine
         autoencoder (list): scores of autoencoder
@@ -17,7 +17,7 @@ def plot_baselines(labels, predictor, isolation_forest, oc_svm, autoencoder):
     width = 0.2  # the width of the bars
 
     fig, ax = plt.subplots()
-    rects1 = ax.bar(x - 3*width/2, predictor, width, label='Predictor')
+    rects1 = ax.bar(x - 3*width/2, my_predictor, width, label='Novel Predictor')
     rects2 = ax.bar(x - width/2, isolation_forest, width, label='Isolation Forest')
     rects3 = ax.bar(x + width/2, oc_svm, width, label='OC SVM')
     rects4 = ax.bar(x + 3*width/2, autoencoder, width, label='Autoencoder')
@@ -50,11 +50,11 @@ def plot_baselines(labels, predictor, isolation_forest, oc_svm, autoencoder):
 
 if __name__ == '__main__':
     # take values from log files
-    # [predictor, isolation forest, oc svm, autoencoder]
+    # [my predictor, isolation forest, oc svm, autoencoder]
     labels = ['TPR', 'TNR']
-    predictor = [0.88415, 0.94422]
-    isolation_forest = [0.85976,  0.94613]
-    oc_svm = [0.88618, 0.89988]
-    autoencoder = [0.90447, 0.92150]
+    my_predictor = [0.89865, 0.95101]
+    isolation_forest = [0.86486,  0.93792]
+    oc_svm = [0.89189, 0.89997]
+    autoencoder = [0.91892, 0.92000]
 
-    plot_baselines(labels, predictor, isolation_forest, oc_svm, autoencoder)
+    plot_baselines(labels, my_predictor, isolation_forest, oc_svm, autoencoder)
