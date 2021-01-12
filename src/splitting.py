@@ -35,7 +35,7 @@ def split_dataset(data):
 
 if __name__ == '__main__':
     # load dataset
-    data = pd.read_csv('../../dataset/creditcard.csv', sep=',')
+    data = pd.read_csv('../dataset/creditcard.csv', sep=',')
 
     # split dataset (Feature 'Time' is dropped)
     training_set, test_set = split_dataset(data.drop(columns=['Time']))
@@ -43,5 +43,5 @@ if __name__ == '__main__':
     print('Total: {0}, Training: {1}, Test: {2}'.format(data.shape[0], training_set.shape[0], test_set.shape[0]))
 
     # store raw training set and raw test set
-    training_set.to_pickle('../../pickle/raw_trainingset.pkl')
-    test_set.to_pickle('../../pickle/raw_testset.pkl')
+    training_set.to_pickle('../pickle/raw_trainingset.pkl')
+    test_set.to_pickle('../pickle/raw_testset.pkl')
